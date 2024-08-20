@@ -66,11 +66,11 @@ function checkUI() {
   const items = itemList.querySelectorAll("li");
 
   if (items.length === 0) {
-    clearBtn.style.display = "none";
-    itemFilter.style.display = "none";
+    clearBtn.classList.add("hidden");
+    itemFilter.classList.add("hidden");
   } else {
-    clearBtn.style.display = "block";
-    itemFilter.style.display = "block";
+    clearBtn.classList.remove("hidden");
+    itemFilter.classList.remove("hidden");
   }
 }
 
