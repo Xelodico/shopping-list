@@ -61,6 +61,10 @@ header h1 {
   outline: none;
 }
 
+.edit-mode {
+  color: #797979
+}
+
 /* Buttons */
 .btn {
   background-color: #333;
