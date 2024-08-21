@@ -62,6 +62,22 @@ function clearItems() {
   checkUI();
 }
 
+function filterItems(e) {
+  const items = itemList.querySelectorAll("li");
+  const targetItem = e.target.value.toLowerCase();
+  // console.log(e.target.value);
+  items.forEach((item) => {
+    const itemName = item.firstChild.textContent.toLowerCase();
+    item.style.display = itemName.includes(targetItem) ? "flex" : "none";
+
+    // if (itemName.includes(targetItem)) {
+    //   item.style.display = "flex";
+    // } else {
+    //   item.style.display = "none";
+    // }
+  });
+}
+
 function checkUI() {
   const items = itemList.querySelectorAll("li");
 
@@ -78,5 +94,6 @@ function checkUI() {
 itemForm.addEventListener("submit", addItem);
 itemList.addEventListener("click", removeItem);
 clearBtn.addEventListener("click", clearItems);
+itemFilter.addEventListener("input", filterItems);
 
 checkUI();
